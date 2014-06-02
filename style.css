@@ -1,0 +1,25 @@
+body {
+  background: #eee;
+  padding: 20% 0 0;
+  font-size: 3.5em;
+}
+img {
+  display: block;
+  width: 35%;
+  margin: 0 auto;
+  border-radius: 25%;
+}
+div {
+  text-align: center;
+  width: 100%;
+}
+p {
+  position: fixed;
+  bottom: 10px;
+  text-align: center;
+  width: 100%;
+}
+i {
+  font-style: normal;
+  font-weight: bold;
+}
