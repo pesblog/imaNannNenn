@@ -19,4 +19,5 @@
 # タイプ
 
  * [明朝タイプ](https://pesblog.github.io/imaNannNenn/)
- * [ゴシック](https://pesblog.github.io/imaNannNenn/thin-type.html)
+ * [細ゴシック](https://pesblog.github.io/imaNannNenn/thin-type.html)
+ * [細ゴシック2](https://pesblog.github.io/imaNannNenn/thin2-type.html)
