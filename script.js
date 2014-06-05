@@ -28,11 +28,10 @@ function mkPostposition(type) {
 }
 
 function loadYearIcon(type) {
+  var year         = (new Date()).getFullYear();
   var postposition = mkPostposition(type);
-
-  var year = (new Date()).getFullYear();
-  var cName = 'yearcookie' + postposition;
-  var cValue = findCookie(cName);
+  var cName        = 'yearcookie' + postposition;
+  var cValue       = findCookie(cName);
   if (typeof cValue === 'undefined' || Number(cValue) !== year) {
     setIconCookie(cName, year);
     location.reload();
