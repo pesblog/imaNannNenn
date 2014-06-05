@@ -6,9 +6,10 @@ function setIconCookie(cName){
   document.cookie = cName + "=" + escape(year) + "; expires=" + nextEndOfYear.toGMTString();
 }
 
-function loadYearIcon(){
+function loadYearIcon(type){
+  
   var postposition = '';
-  if( typeof type != "undefined" ){
+  if( type != "undefined" ){
     if ( type === 'thin' ){
       postposition = '_helvetica-ul_yugothic-el';
     } else if ( type == 'thin2'){
@@ -43,5 +44,3 @@ function loadYearIcon(){
   document.getElementById('icon').setAttribute('href',calImg);
   document.getElementById('iconimg').setAttribute('src',calImg);
 }
-
-loadYearIcon();
