@@ -7,15 +7,15 @@ function setIconCookie(cName) {
                   + '; expires=' + nextEndOfYear.toGMTString();
 }
 
+function mkPostposition(type) {
+  if (typeof type !== 'string' || type === '') return '';
+
+  if (type === 'thin' ) return '_helvetica-ul_yugothic-el';
+  if (type === 'thin2') return '_helvetica-t_yugothic-l';
+}
+
 function loadYearIcon(type) {
-  var postposition = '';
-  if (typeof type !== 'undefined') {
-    if (type === 'thin') {
-      postposition = '_helvetica-ul_yugothic-el';
-    } else if (type === 'thin2') {
-      postposition = '_helvetica-t_yugothic-l';
-    }
-  }
+  var postposition = mkPostposition(type);
 
   var date = new Date();
   var year = date.getFullYear();
