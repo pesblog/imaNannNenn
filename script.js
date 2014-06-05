@@ -14,6 +14,8 @@ function loadYearIcon(type){
       postposition = '_helvetica-ul_yugothic-el';
     } else if ( type == 'thin2'){
       postposition = '_helvetica-t_yugothic-l';
+    } else if (type === 'eto') {
+      postposition = '_eto';
     }
   }
 
