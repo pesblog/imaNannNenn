@@ -33,9 +33,7 @@ function loadYearIcon(type) {
   var year = (new Date()).getFullYear();
   var cName = 'yearcookie' + postposition;
   var cValue = findCookie(cName);
-  if (typeof cValue === 'undefined') {
-    setIconCookie(cName, year);
-  } else if (Number(cValue) !== year) {
+  if (typeof cValue === 'undefined' || Number(cValue) !== year) {
     setIconCookie(cName, year);
     location.reload();
   }
