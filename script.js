@@ -9,10 +9,10 @@ function setIconCookie(cName) {
 
 function loadYearIcon(type) {
   var postposition = '';
-  if (typeof type != 'undefined') {
+  if (typeof type !== 'undefined') {
     if (type === 'thin') {
       postposition = '_helvetica-ul_yugothic-el';
-    } else if (type == 'thin2') {
+    } else if (type === 'thin2') {
       postposition = '_helvetica-t_yugothic-l';
     }
   }
@@ -25,10 +25,10 @@ function loadYearIcon(type) {
     var cookies = document.cookie.split("; ");
     for (var i = 0; i < cookies.length; i++) {
       var str = cookies[i].split('=');
-      if (str[0] == cName) {
+      if (str[0] === cName) {
         findYearCookie = true;
         var cookie_value = unescape(str[1]);
-        if (cookie_value != year) {
+        if (Number(cookie_value) !== year) {
           setIconCookie(cName);
           location.reload();
         }
