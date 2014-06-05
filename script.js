@@ -7,9 +7,9 @@ function setIconCookie(cName){
 }
 
 function loadYearIcon(type){
-  
+
   var postposition = '';
-  if( type != "undefined" ){
+  if( typeof type != "undefined" ){
     if ( type === 'thin' ){
       postposition = '_helvetica-ul_yugothic-el';
     } else if ( type == 'thin2'){
