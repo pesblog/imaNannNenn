@@ -40,7 +40,7 @@ function loadYearIcon(type){
     setIconCookie(cName);
   }
 
-  var calImg = year + postposition + '.png';
+  var calImg = 'img/' + year + postposition + '.png';
   document.getElementById('icon').setAttribute('href',calImg);
   document.getElementById('iconimg').setAttribute('src',calImg);
 }
