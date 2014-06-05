@@ -25,7 +25,6 @@ if (document.cookie) {
     }
   }
 }
-console.log("test");
 if ( !findYearCookie ){
 	setIconCookie(cName);
 }
