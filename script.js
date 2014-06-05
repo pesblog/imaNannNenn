@@ -5,6 +5,21 @@ function setIconCookie(cName, year) {
                   + '; expires=' + nextEndOfYear.toGMTString();
 }
 
+function findCookie(cName) {
+  if (!document.cookie) return undefined;
+
+  var cookies = document.cookie.split("; ");
+  for (var i in cookies) {
+    var cookie = cookies[i].split('=');
+    if (cookie[0] === cName) {
+      var cookie_value = unescape(cookie[1]);
+      return cookie_value;
+    }
+  }
+
+  return undefined;
+}
+
 function mkPostposition(type) {
   if (typeof type !== 'string' || type === '') return '';
 
@@ -17,24 +32,12 @@ function loadYearIcon(type) {
 
   var year = (new Date()).getFullYear();
   var cName = 'yearcookie' + postposition;
-  var findYearCookie = false;
-  if (document.cookie) {
-    var cookies = document.cookie.split("; ");
-    for (var i = 0; i < cookies.length; i++) {
-      var str = cookies[i].split('=');
-      if (str[0] === cName) {
-        findYearCookie = true;
-        var cookie_value = unescape(str[1]);
-        if (Number(cookie_value) !== year) {
-          setIconCookie(cName, year);
-          location.reload();
-        }
-      }
-    }
-  }
-
-  if (!findYearCookie) {
+  var cValue = findCookie(cName);
+  if (typeof cValue === 'undefined') {
     setIconCookie(cName, year);
+  } else if (Number(cValue) !== year) {
+    setIconCookie(cName, year);
+    location.reload();
   }
 
   var calImg = 'img/' + year + postposition + '.png';
