@@ -1,7 +1,5 @@
 
-function setIconCookie(cName) {
-  var date=new Date();
-  var year = date.getFullYear();
+function setIconCookie(cName, year) {
   var nextEndOfYear = new Date(year+1, 12, 0);
   document.cookie = cName + '=' + escape(year)
                   + '; expires=' + nextEndOfYear.toGMTString();
@@ -17,8 +15,7 @@ function mkPostposition(type) {
 function loadYearIcon(type) {
   var postposition = mkPostposition(type);
 
-  var date = new Date();
-  var year = date.getFullYear();
+  var year = (new Date()).getFullYear();
   var cName = 'yearcookie' + postposition;
   var findYearCookie = false;
   if (document.cookie) {
@@ -29,7 +26,7 @@ function loadYearIcon(type) {
         findYearCookie = true;
         var cookie_value = unescape(str[1]);
         if (Number(cookie_value) !== year) {
-          setIconCookie(cName);
+          setIconCookie(cName, year);
           location.reload();
         }
       }
@@ -37,7 +34,7 @@ function loadYearIcon(type) {
   }
 
   if (!findYearCookie) {
-    setIconCookie(cName);
+    setIconCookie(cName, year);
   }
 
   var calImg = 'img/' + year + postposition + '.png';
