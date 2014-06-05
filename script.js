@@ -1,5 +1,5 @@
 
-function setIconCookie(cName, year) {
+function saveYearCookie(cName, year) {
   var nextEndOfYear = new Date(year+1, 12, 0);
   document.cookie = cName + '=' + escape(year)
                   + '; expires=' + nextEndOfYear.toGMTString();
@@ -33,7 +33,7 @@ function loadYearIcon(type) {
   var cName        = 'yearcookie' + postposition;
   var cValue       = findCookie(cName);
   if (typeof cValue === 'undefined' || Number(cValue) !== year) {
-    setIconCookie(cName, year);
+    saveYearCookie(cName, year);
     location.reload();
   }
 
